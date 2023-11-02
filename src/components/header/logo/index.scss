@@ -1,0 +1,33 @@
+.Logo{
+    width: 10%;
+    a{
+        text-decoration: none !important;
+        span{
+            color: rgb(255, 255, 255);
+            text-shadow: 0 1px 5px rgba(254, 187, 198, 0.914);
+            font-size: 45px;
+            font-weight: 600;
+            font-family: 'Encode Sans Semi Condensed', sans-serif !important;
+            // text-shadow: 0 1px 0 #d80202,
+            //              0 2px 1px #c40000,
+            //              0 3px 2px #810101,
+            //              0 4px 3px #6e0000,
+            //              0 5px 4px #470000,
+            //              0 6px 1px rgba(0,0,0,.1),
+            //              0 0 5px rgba(0,0,0,.1),
+            //              0 1px 3px rgba(0,0,0,.3),
+            //              0 3px 5px rgba(0,0,0,.2),
+            //              0 5px 10px rgba(0,0,0,.25),
+            //              0 10px 10px rgba(0,0,0,.2),
+            //              0 20px 20px rgba(0,0,0,.15);
+            // text-shadow: -4px 3px 0 #3a50d9, -14px 7px 0 #0a0e27;
+            // background: conic-gradient(from 90deg at 40% -25%, #ffd700, #f79d03, #ee6907, #e6390a, #de0d0d, #d61039, #cf1261, #c71585, #cf1261, #d61039, #de0d0d, #ee6907, #f79d03, #ffd700, #ffd700, #ffd700);
+        }
+        i{
+            font-size: 50px;
+            font-weight: 600;
+            color: white;
+            display: inline;
+        }
+    }
+}

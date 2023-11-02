@@ -1,0 +1,123 @@
+.ComingSoon{
+    width: 100%;
+    .ComingSoonContainer{
+        .ComingSoonContainer-bg{
+            padding: 30px 0;
+            background: linear-gradient(#313131,rgb(0, 0, 0));
+            .ComingSoonWrapper{
+                .ComingSoon-header{
+                    text-align: center;
+                    background: linear-gradient(130deg,#ff7a18,#af002d 41.07%,#319197 76.05%);
+                    font-family: 'Encode Sans Semi Condensed', sans-serif;
+                    color: white;
+                    padding: 15px 0px;
+                    h2{
+                        font-size: 72px;
+                    }
+                }
+                .ComingSoon-card{
+                    width: 50%;
+                    padding: 15px 20px;
+                    // background-color: black;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    .Mini-card-item{
+                        width: 50%;
+                        height: 500px;
+                        padding: 20px 20px;
+                        .item-content{
+                            position: relative;
+                            background-position: center;
+                            background-size: cover;
+                            background-repeat: no-repeat;
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: flex-end;
+                            border-radius: 10px;
+                            .item-content-inner{
+                                width: 100%;
+                                height: 30%;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
+                                color: white;
+                                text-shadow: 0 1px 5px rgb(0, 0, 0);
+                                // background: linear-gradient(130deg,#ff7a18,#af002d 41.07%,#319197 76.05%);
+                                background-color: #0000007d;
+                                backdrop-filter: blur(5px);
+                                border-radius: 0 0 10px 10px;
+                                h5{
+                                    text-align: center;
+                                }
+                                .button-outline{
+                                    padding: 10px 10px;
+                                    text-align: center;
+                                    margin-left: 0;
+                                    width: 100%;
+                                    height: 100%;
+                                    background-color: rgb(120, 5, 5);
+                                    box-shadow: 0 4px 8px 0 rgba(190, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                                    color: white;
+                                    font-family: 'Encode Sans Semi Condensed', sans-serif;
+                                }
+                                .button-outline:hover{
+                                    background-color: rgb(54, 1, 9);
+                                    // scale: 1.05;
+                                    transition: .5s;
+                                }
+
+                            }                        
+                        }
+                        .item-content::before {
+                            content: "";
+                            background: linear-gradient(130deg,#ff7a18,#af002d 41.07%,#319197 76.05%);
+                            position: absolute;
+                            top: -5px;
+                            left: -5px;
+                            width: calc(100% + 10px);
+                            height: calc(100% + 10px);
+                            z-index: -2;
+                            border-radius: 12px;
+                            animation: example 5s linear infinite;
+                            transition: all 1s;
+                        }
+                        // @keyframes example {
+                        //     0% { background: linear-gradient(130deg,#ff7a18,#af002d 41.07%,#319197 76.05%); }
+                        //     10% { background: linear-gradient(130deg,#18cdff,#ff7a18 41.07%,#af002d 76.05%); }
+                        //     20% { background: linear-gradient(130deg,#af002d,#18cdff 41.07%,#ff7a18 76.05%); }
+                        //     30% { background: linear-gradient(130deg,#ff7a18,#af002d 41.07%,#319197 76.05%); }
+                        //     40% { background: linear-gradient(130deg,#18cdff,#ff7a18 41.07%,#af002d 76.05%); }
+                        //     50% { background: linear-gradient(130deg,#af002d,#18cdff 41.07%,#ff7a18 76.05%); }
+                        //     60% { background: linear-gradient(130deg,#ff7a18,#af002d 41.07%,#319197 76.05%); }
+                        //     70% { background: linear-gradient(130deg,#18cdff,#ff7a18 41.07%,#af002d 76.05%); }
+                        //     80% { background: linear-gradient(130deg,#af002d,#18cdff 41.07%,#ff7a18 76.05%); }
+                        //     90% { background: linear-gradient(130deg,#ff7a18,#af002d 41.07%,#319197 76.05%); }
+                        //     100% { background: linear-gradient(130deg,#18cdff,#ff7a18 41.07%,#af002d 76.05%); }
+                        //   }
+                        .item-content::after {
+                            content: "";
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            background: #000;
+                            z-index: -1;
+                            border-radius: 8px;
+                        }
+                    }
+                    .Mini-card-item:hover{
+                        scale: 1.1;
+                        transition: all .5s;
+                    }
+
+                }
+            }
+        }
+    }
+}

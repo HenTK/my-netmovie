@@ -1,0 +1,23 @@
+.MovieDetail{
+    background: linear-gradient(black, #444343);
+    width: 100vw;
+    position: relative;
+    .MovieDetailContainer{
+        .MovieDetailbg{
+            .MovieDetailWrapper{   
+                .MovieDetailContent{
+                    .MovieDetailBody{
+                        padding: 150px 0;
+                        .MovieDetailBody-container{
+                            width: 75%;
+                            margin: 0 auto;
+                            color: white;
+                            font-family: 'Encode Sans Semi Condensed', sans-serif;
+                        }
+                    }
+    
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,52 @@
+.Poster{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -45;
+    top: 0;
+    left: 0;
+    margin: 0;
+    .filter-bg{
+        filter: blur(10px);
+        position: absolute;
+        z-index: -30;
+        width: 100%;
+        height: 100%;
+        // background-color: rgb(49, 3, 93);
+        background: linear-gradient(#5c0241, #010f6bb5) !important;
+        opacity: .3;
+    }
+    .filter-bg-bottom-right{
+        filter: blur(50px);
+        position: absolute;
+        z-index: -20;
+        width: 30%;
+        height: 30%;
+        // background-color: rgb(49, 3, 93);
+        background-color: #02421890;
+        opacity: .5;
+        bottom: 0;
+        right: 0;
+    }
+    .filter-bg-top-left{
+        filter: blur(50px);
+        position: absolute;
+        z-index: -20;
+        width: 30%;
+        height: 30%;
+        // background-color: rgb(49, 3, 93);
+        background-color: #ff000090;
+        opacity: .5;
+        top: 0;
+        left: 0;
+    }
+    img{
+        object-fit: cover;
+        filter: blur(4px);
+        position: absolute;
+        z-index: -40;
+        width: 100%;
+        height: 100%;
+        object-position: center;
+    }
+}
