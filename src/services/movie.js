@@ -17,3 +17,11 @@ export const fectMovieDetailApi = (id) => {
     method: "GET",
   });
 };
+
+export const addMovieListApi = (data) => {
+  return axios({
+    url: `${BASE_URL}/QuanLyPhim`,
+    method: "POST",
+    data: data,
+  });
+};

@@ -3,18 +3,18 @@ import { useNavigate } from 'react-router-dom'
 import { registerApi } from '../../services/user';
 import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
-import Loading from '../loading/Loading';
-import "./index.scss";
 import ModalSign from '../../components/modalSign/ModalSign';
 import Poster from '../../components/poster/Poster';
 import { LoadingContext } from '../../contexts/loading/LoadingContext';
 import { notification } from 'antd';
+import "./index.scss";
 
 export default function Register() {
     const navigate = useNavigate();
     const [state, setState] = useState({
         taiKhoan: "",
         matKhau: "",
+
     });
     const [loadingState, setLoadingState] = useContext(LoadingContext);
 
@@ -29,9 +29,10 @@ export default function Register() {
 
     const handleSubmit = async event => {
         window.scrollTo(0,0);
-
+        const data = await {...state, quanTri: "nguoiDung"};
+        // console.log(data);
         event.preventDefault();
-        const result = registerApi(state);
+        const result = registerApi(data);
 
         setLoadingState({
           isLoading: true,
