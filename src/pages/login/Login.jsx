@@ -119,6 +119,10 @@ export default function Login() {
         },2000);
     }
 
+    const handleBlur = (event) => {
+      //do nothing
+    }
+
   return (
     <>
       {/* position = relative; none z-index (default is z-index = 0) */}
@@ -136,6 +140,7 @@ export default function Login() {
             handleSubmit = {handleSubmit}
             errorState = {errorState}
             navigate = {"register"}
+            handleBlur = {handleBlur}
             />
         </div>
           <Footer/>

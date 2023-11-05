@@ -1,6 +1,7 @@
 import React from 'react'
 import "./index.scss"
 import { useNavigate } from 'react-router-dom'
+import { event } from 'jquery';
 
 export default function ModalSign(props) {
     const navigate = useNavigate();
@@ -19,8 +20,13 @@ export default function ModalSign(props) {
             <input 
             type="text"
             className="form-control" 
-            name="taiKhoan" 
+            name="taiKhoan"
+            title='Tài khoản' 
+            required
+            minLength={3}
+            maxLength={20}
             onChange={(event)=>{props.handleChangeState(event)}}
+            onBlur={(event)=>{props.handleBlur(event)}}
             />
             <span className="text-danger">{props?.errorState?.taiKhoan}</span>
           </div>
@@ -29,8 +35,16 @@ export default function ModalSign(props) {
             <input 
             type="text" 
             className="form-control" 
-            name="matKhau" 
+            name="matKhau"
+            title='Mật Khẩu' 
+            required
+            minLength={3}
+            maxLength={20}
+            //https://www.w3schools.com/TAGS/att_input_pattern.asp#:~:text=The%20pattern%20attribute%20specifies%20a%20regular%20expression%20that,to%20describe%20the%20pattern%20to%20help%20the%20user.
+            //normal regx to react regx .source ???
+            // pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}'
             onChange={(event)=>{props.handleChangeState(event)}}
+            onBlur={(event)=>{props.handleBlur(event)}}
             />
             <span className="text-danger">{props?.errorState?.matKhau}</span>
           </div>

@@ -6,7 +6,7 @@ import Footer from '../../components/footer/Footer';
 import ModalSign from '../../components/modalSign/ModalSign';
 import Poster from '../../components/poster/Poster';
 import { LoadingContext } from '../../contexts/loading/LoadingContext';
-import { notification } from 'antd';
+import { message, notification } from 'antd';
 import "./index.scss";
 
 export default function Register() {
@@ -16,6 +16,10 @@ export default function Register() {
         matKhau: "",
 
     });
+    const [errorState, setStateError] = useState({
+      taiKhoan: "",
+      matKhau: "",
+    });
     const [loadingState, setLoadingState] = useContext(LoadingContext);
 
     const handleChangeState = (event) => {
@@ -24,20 +28,34 @@ export default function Register() {
           ...state,
           [name]: value,
         });
-        console.log(state);
+        // console.log(state);
     };
 
     const handleSubmit = async event => {
-        window.scrollTo(0,0);
-        const data = await {...state, quanTri: "nguoiDung"};
-        // console.log(data);
-        event.preventDefault();
+      //kéo về đầu trang
+      window.scrollTo(0,0);
+      //chặn trình duyệt load trang
+      event.preventDefault();
+      //load lại trang
+      setLoadingState({
+        isLoading: true,
+      });
+      const data = await {...state, quanTri: "nguoiDung"};
+      const isValid = event.target.checkValidity();
+        
+
+        if(!isValid){
+          setLoadingState({
+            isLoading: false,
+          });
+          notification.error({
+            message: "Form is InValid!"
+          });
+          return;
+        }
+        
         const result = registerApi(data);
 
-        setLoadingState({
-          isLoading: true,
-        });
-        
         setTimeout(() => {
           // alert("Register success");
           notification.success({
@@ -48,6 +66,28 @@ export default function Register() {
             isLoading: false,
           });
         }, 2000);
+    }
+
+    const handleBlur = (event) => {
+      let message = "";
+
+      const {validationMessage, name, validity, title, minLength, maxLength} = event.target;
+      const {valueMissing, tooShort, tooLong, patternMismatch} = validity;
+      
+      if(valueMissing){
+        message = `${title} is required`;
+      }
+      if(tooShort||tooLong){
+        message = `${title} from ${minLength} - ${maxLength} characters`;
+      }
+      if(patternMismatch){
+        message = `${title} must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters`;
+      }
+
+      setStateError({
+        ...errorState,
+        [name]: message
+      })
     }
 
   return (
@@ -62,6 +102,8 @@ export default function Register() {
           handleChangeState = {handleChangeState}
           handleSubmit = {handleSubmit}
           navigate = {"login"}
+          handleBlur = {handleBlur}
+          errorState = {errorState}
           />
       </div>
       <Footer/>
