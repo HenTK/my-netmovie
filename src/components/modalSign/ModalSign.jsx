@@ -21,7 +21,7 @@ export default function ModalSign(props) {
             type="text"
             className="form-control" 
             name="taiKhoan"
-            title='Tài khoản' 
+            title='Username' 
             required
             minLength={3}
             maxLength={20}
@@ -36,7 +36,7 @@ export default function ModalSign(props) {
             type="text" 
             className="form-control" 
             name="matKhau"
-            title='Mật Khẩu' 
+            title='Password' 
             required
             minLength={3}
             maxLength={20}
