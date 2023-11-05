@@ -1,3 +1,5 @@
+@import "../../../../styles/mixin";
+
 .Detail{
     // padding: 15px auto;
     border-radius: 20px 0 20px 0;
@@ -31,15 +33,10 @@
                 }
 
                 .button-outline{
-                    background-color: rgb(120, 5, 5);
-                    box-shadow: 0 4px 8px 0 rgba(190, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                    color: white;
-                    font-family: 'Encode Sans Semi Condensed', sans-serif;
+                    @include button-outline();
                 }
                 .button-outline:hover{
-                    background-color: rgb(54, 1, 9);
-                    scale: 1.05;
-                    transition: .5s;
+                    @include button-outline-hover();
                 }
             }
 

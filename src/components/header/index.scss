@@ -1,3 +1,5 @@
+@import "../../styles/mixin";
+
 .header{
     background-color: rgba(219, 191, 191, 0.082);
     width: 100%;
@@ -22,15 +24,11 @@
                 flex-direction: row wrap;
                 justify-content: center;
                 .button-outline{
-                    background-color: rgb(120, 5, 5);
-                    box-shadow: 0 4px 8px 0 rgba(190, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                    color: white;
-                    font-family: 'Encode Sans Semi Condensed', sans-serif;
+                    @include button-outline();
                 }
                 .button-outline:hover{
-                    background-color: rgb(54, 1, 9);
-                    scale: 1.05;
-                    transition: .5s;
+                    @include button-outline-hover();
+
                 }
             }
         }

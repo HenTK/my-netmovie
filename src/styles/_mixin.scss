@@ -1,0 +1,12 @@
+@mixin button-outline(){
+    background-color: rgb(80, 2, 2);
+    box-shadow: 0 4px 8px 0 rgba(190, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: white;
+    font-family: 'Encode Sans Semi Condensed', sans-serif;
+}
+@mixin button-outline-hover(){
+    background-color: rgb(29, 0, 5);
+    scale: 1.01;
+    transition: .5s;
+    color: white;
+}
