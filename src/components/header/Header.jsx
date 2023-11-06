@@ -5,6 +5,7 @@ import UserInfo from './userInfo/UserInfo';
 import { dispatchLogoutUserInfo } from '../../store/actions/loginAction';
 import Logo from './logo/Logo';
 import "./index.scss";
+import { event } from 'jquery';
 
 export default function Header() {
   const dispatch = useDispatch();
@@ -13,8 +14,10 @@ export default function Header() {
   const [userLoginState, setUserLoginState] = useState({
     id: "",
     taiKhoan: "",
+    quanTri: "",
   });
   const [userInfoState, setUserInfoState] = useState(false);
+  const [adminState, setAdminState] = useState(false);
 
   useEffect(()=>{
     getLoginUserDetail();
@@ -108,7 +111,7 @@ export default function Header() {
     event.preventDefault();
     // console.log("data");
     dispatch(dispatchLogoutUserInfo({}));
-    setUserLoginState({id: "", taiKhoan: ""});
+    setUserLoginState({id: "", taiKhoan: "", quanTri: ""});
     navigate("/");
   }
   
@@ -172,6 +175,25 @@ export default function Header() {
                   >
                     Log Out
                   </button>
+                  {
+                    userLoginState?.quanTri === "admin" ?
+                    <button
+                    className='btn button-outline'
+                    onClick={
+                      (event)=>{
+                        event.preventDefault();
+                        navigate("/admin/movie-management");
+                      }
+                    }
+                    style={{marginLeft: 10}}
+                    >
+                      Go to admin
+                    </button>
+                    :
+                    <></>
+                  }
+                  
+
                   <div>
                     <button 
                     style={{

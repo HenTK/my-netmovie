@@ -1,9 +1,11 @@
 import { useMovieList } from 'hooks/useMovieList'
 import React from 'react'
-import { Button, Space, Table, Tag } from 'antd';
+import { Button, Space, Table, Tag, notification } from 'antd';
 import "./index.scss"
 import { formatDate } from 'utils';
 import { useNavigate } from 'react-router-dom';
+import { event } from 'jquery';
+import { deleteMovieDetailApi } from 'services/movie';
 
 export default function MovieManagement() {
   const movieList =  useMovieList();
@@ -51,7 +53,15 @@ export default function MovieManagement() {
             }}>
               EDIT
             </Button>
-            <Button>DELETE</Button>
+            <Button
+            onClick={(e)=>{
+              e.preventDefault();
+              //không xóa được phim đã có lịch chiếu, booking
+              deleteMovieDetail(text);
+            }}
+            >
+              DELETE
+            </Button>
           </div>
         )
       }
@@ -60,7 +70,27 @@ export default function MovieManagement() {
   ];
   const data = [];
 
-  // console.log(movieList);
+  const deleteMovieDetail = async (data) => {
+    //phim ở nhóm GP01 là những phim đang chiếu
+    if(data?.maNhom === "GP01" && data?.dangChieu === true){
+      notification.error({
+        message: "Phim đang chiếu không thể xóa."
+      });
+      return;
+    }
+    if(data?.maNhom !== "GP01" && data?.dangChieu === false){
+      await deleteMovieDetailApi(data.id);
+      notification.success({
+        message: "Xóa phim thành công."
+      })
+    }
+    window.scrollTo(0,0);
+    //chạy lại component để render lại giao diện
+    //update lại store để chạy lại giao diện
+    navigate("/admin/movie-management");
+    return;
+
+  }
 
   return (
     <div>

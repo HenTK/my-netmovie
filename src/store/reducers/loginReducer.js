@@ -10,7 +10,7 @@ const DEFAULT_STATE = {
 
 if (localStorage.getItem("USER_INFO_KEY")) {
   const data = JSON.parse(localStorage.getItem("USER_INFO_KEY"));
-  console.log(data);
+  // console.log(data);
   DEFAULT_STATE.userDetail.id = data?.id;
   DEFAULT_STATE.userDetail.taiKhoan = data?.taiKhoan;
   DEFAULT_STATE.userDetail.quanTri = data?.quanTri;
@@ -22,13 +22,13 @@ export const loginReducer = (state = DEFAULT_STATE, action) => {
     case FETCH_LOGIN_USER_INFO:
       {
         state.userDetail = payload;
-        console.log(payload, "user current");
+        // console.log(payload, "user current");
       }
       break;
     case FETCH_LOGOUT_USER_INFO: {
       state.userDetail = { id: "", taiKhoan: "", quanTri: "" };
       localStorage.removeItem("USER_INFO_KEY");
-      console.log("Logout acc reducer");
+      // console.log("Logout acc reducer");
     }
     default:
       break;

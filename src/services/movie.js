@@ -34,3 +34,10 @@ export const editMovieDetailApi = (data, id) => {
     data: data,
   });
 };
+
+export const deleteMovieDetailApi = (id) => {
+  return axios({
+    url: `${BASE_URL}/QuanLyPhim/${id}`,
+    method: "DELETE",
+  });
+};

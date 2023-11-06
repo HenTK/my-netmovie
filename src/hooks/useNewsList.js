@@ -16,13 +16,13 @@ export const useNewsList = () => {
     if (hookState.newsList.length === 0) {
       const data = await fetchNewsListApi();
       const result = await dispatch(dispatchNewsList(data.data));
-      await console.log("using state 0");
+      // await console.log("using state 0");
       await setnewsList(data.data);
 
       return;
     }
     await setnewsList(hookState.newsList);
-    console.log("using state 1");
+    // console.log("using state 1");
     return;
   };
   return newsList;
