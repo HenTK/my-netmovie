@@ -23,9 +23,14 @@ export default function MovieManagement() {
       render: (text) => formatDate(text),
     },
     {
-      title: "Mô tả",
+      title: "Hình ảnh",
       key: "3",
-      dataIndex: "moTa",
+      dataIndex: "hinhAnh",
+      render: (text)=> {
+        return(
+          <img src={text} alt='#' className='hinhAnh'/>
+        )
+      }
     },
     {
       title: "Đánh giá",
@@ -36,9 +41,16 @@ export default function MovieManagement() {
       title: "Hành động",
       key: "5",
       render: (text)=>{
+        //text render sẽ là movieList trả về
         return(
           <div>
-            <Button>EDIT</Button>
+            <Button 
+            onClick={(event)=>{
+              event.preventDefault();
+              navigate(`/admin/movie-management/edit/${text.maPhim}`);
+            }}>
+              EDIT
+            </Button>
             <Button>DELETE</Button>
           </div>
         )
@@ -48,7 +60,7 @@ export default function MovieManagement() {
   ];
   const data = [];
 
-  console.log(movieList);
+  // console.log(movieList);
 
   return (
     <div>

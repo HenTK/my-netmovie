@@ -105,6 +105,10 @@ export default function Router() {
                             path: "/admin/movie-management/add",
                             element: <MovieForm/>,
                         },
+                        {
+                            path: "/admin/movie-management/edit/:id",
+                            element: <MovieForm/>
+                        }
                     ],
                 },
             ],
