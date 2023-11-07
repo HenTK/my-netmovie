@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom'
+import { Outlet, useNavigate } from 'react-router-dom'
 import React, { useState } from 'react';
 import {
   DesktopOutlined,
@@ -6,8 +6,10 @@ import {
   PieChartOutlined,
   TeamOutlined,
   UserOutlined,
+  UploadOutlined,
 } from '@ant-design/icons';
 import { Breadcrumb, Layout, Menu, theme } from 'antd';
+import { event } from 'jquery';
 const { Header, Content, Footer, Sider } = Layout;
 function getItem(label, key, icon, children) {
   return {
@@ -18,22 +20,37 @@ function getItem(label, key, icon, children) {
   };
 }
 const items = [
-  getItem('Option 1', '1', <PieChartOutlined />),
-  getItem('Option 2', '2', <DesktopOutlined />),
+  getItem('Trang tổng quan', '1', <PieChartOutlined />),
+  getItem('Thêm phim mới', '2', <DesktopOutlined />),
   getItem('User', 'sub1', <UserOutlined />, [
-    getItem('Tom', '3'),
-    getItem('Bill', '4'),
-    getItem('Alex', '5'),
+    getItem('Tom', '4'),
+    getItem('Bill', '5'),
+    getItem('Alex', '6'),
   ]),
-  getItem('Team', 'sub2', <TeamOutlined />, [getItem('Team 1', '6'), getItem('Team 2', '8')]),
-  getItem('Files', '9', <FileOutlined />),
+  // getItem('Team', 'sub2', <TeamOutlined />, [getItem('Team 1', '6'), getItem('Team 2', '8')]),
+  // getItem('Files', '9', <FileOutlined />),
+  getItem('Đăng xuất', '10', <UploadOutlined />),
 ]
 
 export default function AdminLayout() {
     const [collapsed, setCollapsed] = useState(false);
+    const navigate = useNavigate();
     const {
       token: { colorBgContainer },
     } = theme.useToken();
+
+    const handleMenu = (event) => {
+
+      if(event?.key === "1"){
+        window.scrollTo(0,0);
+        navigate("/admin/movie-management/");
+      }
+      if(event?.key === "2"){
+        window.scrollTo(0,0);
+        navigate("/admin/movie-management/add");
+      }
+    }
+
     return (
       <Layout
         style={{
@@ -42,7 +59,7 @@ export default function AdminLayout() {
       >
         <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
           <div className="demo-logo-vertical" />
-          <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} />
+          <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} onClick={(event)=>{handleMenu(event)}}/>
         </Sider>
         <Layout>
           <Header
@@ -56,14 +73,14 @@ export default function AdminLayout() {
               margin: '0 16px',
             }}
           >
-            <Breadcrumb
+            {/* <Breadcrumb
               style={{
                 margin: '16px 0',
               }}
             >
               <Breadcrumb.Item>User</Breadcrumb.Item>
               <Breadcrumb.Item>Bill</Breadcrumb.Item>
-            </Breadcrumb>
+            </Breadcrumb> */}
             <div
               style={{
                 padding: 24,

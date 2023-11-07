@@ -1,11 +1,24 @@
 import { useMovieList } from 'hooks/useMovieList'
 import React from 'react'
-import { Button, Space, Table, Tag, notification } from 'antd';
+import { Button, Input, Space, Table, Tag, notification } from 'antd';
 import "./index.scss"
 import { formatDate } from 'utils';
-import { useNavigate } from 'react-router-dom';
-import { event } from 'jquery';
+import { Form, useNavigate } from 'react-router-dom';
 import { deleteMovieDetailApi } from 'services/movie';
+import { dispatchMovieList } from 'store/actions/movieAction';
+
+//search input
+import { AudioOutlined } from '@ant-design/icons';
+const { Search } = Input;
+const suffix = (
+  <AudioOutlined
+    style={{
+      fontSize: 16,
+      color: '#1677ff',
+    }}
+  />
+);
+const onSearch = (value, _e, info) => console.log(info?.source, value);
 
 export default function MovieManagement() {
   const movieList =  useMovieList();
@@ -82,10 +95,11 @@ export default function MovieManagement() {
       await deleteMovieDetailApi(data.id);
       notification.success({
         message: "Xóa phim thành công."
-      })
+      });
     }
     window.scrollTo(0,0);
     //chạy lại component để render lại giao diện
+    await dispatchMovieList();
     //update lại store để chạy lại giao diện
     navigate("/admin/movie-management");
     return;
@@ -93,18 +107,29 @@ export default function MovieManagement() {
   }
 
   return (
-    <div>
+    <div className='MovieManagement'>
       <h1>QUẢN LÝ PHIM</h1>
+      <div className="MovieManagement-Header">
       <Button
-      className='mb-5'
-      type='primary'
-      onClick={(event)=>{
-        event.preventDefault();
-        navigate("/admin/movie-management/add")
-      }}
-      >
-        THÊM PHIM
-      </Button>
+        className='mb-5'
+        type='primary'
+        onClick={(event)=>{
+          event.preventDefault();
+          navigate("/admin/movie-management/add")
+        }}
+        >
+          THÊM PHIM
+        </Button>
+        <Space direction="vertical">
+          <Search
+            placeholder="input search text"
+            onSearch={onSearch}
+            style={{
+              width: 200,
+            }}
+          />
+        </Space>
+      </div>
       <Table columns={columns} dataSource={movieList} />
     </div>
   )

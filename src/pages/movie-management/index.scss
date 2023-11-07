@@ -1,11 +1,20 @@
-.ant-table-cell{
-    a{
-        color: inherit !important;
-    }
-}
 
-.hinhAnh{
-    width: 150px;
-    height: 225px;
-    object-fit: cover;
+.MovieManagement{
+    .MovieManagement-Header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .ant-table-cell{
+        a{
+            color: inherit !important;
+        }
+    }
+    
+    .hinhAnh{
+        width: 150px;
+        height: 225px;
+        object-fit: cover;
+    }
+
 }
