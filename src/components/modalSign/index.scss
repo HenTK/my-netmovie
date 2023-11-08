@@ -1,4 +1,5 @@
 @import "../../styles/mixin";
+@import "../../styles/variable";
 
 .Modal{
     width: 35%;
@@ -25,13 +26,11 @@
             border-radius: 16px;
             box-shadow: 0 4px 8px 0 rgba(123, 145, 146, 0.2), 0 6px 20px 0 rgba(117, 118, 139, 0.19);
             box-sizing: border-box;
-            font-family: Source Sans Pro;
             height: 100%;
             padding: 50px 48px 100px 48px;
             // position: relative;
             text-align: left;
             font-size: 20px;
-            color: black;
             width: 100%;
             color: white;
             font-family: 'Encode Sans Semi Condensed', sans-serif;
@@ -52,7 +51,6 @@
                 box-sizing: border-box;
                 cursor: pointer;
                 display: inline-block;
-                font-family: Source Sans Pro,sans-serif;
                 font-size: 18px;
                 font-stretch: normal;
                 font-style: normal;
@@ -74,4 +72,66 @@
     }
 }
 
+@include responsive(XL){
+    .Modal{
+        width: 50%;
+
+        .ModalContainer{
+
+            .bg-filter{
+
+            }
+            .Modal__inner{
+
+                height: 100%;
+                padding: 50px 48px 50px 48px;
+                font-size: $text-base;
+                h1{
+                    font-size: $text-2xl;
+                }
+
+                .EmailInput{
+
+                }
+                .buttonSubmit{
+
+                }
+                .buttonSubmit:hover{
+
+                }
+            }
+        }
+    }
+
+}
+
+@include responsive(MD){
+    .Modal{
+        width: 75%;
+
+        .ModalContainer{
+
+            .bg-filter{
+
+            }
+            .Modal__inner{
+
+                h1{
+                    
+                }
+
+                .EmailInput{
+
+                }
+                .buttonSubmit{
+
+                }
+                .buttonSubmit:hover{
+
+                }
+            }
+        }
+    }
+
+}
 

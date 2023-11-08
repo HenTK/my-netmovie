@@ -1,0 +1,30 @@
+@import "../../../../styles/mixin";
+@import "../../../../styles/variable";
+
+.Showtimes{
+    .Showtimes-container{
+        .Showtimes-bar{
+
+        }
+        .Showtimes-content{
+
+        }
+    }
+}
+
+@include responsive(MD){
+    .Showtimes{
+        .Showtimes-container{
+            display: flex;
+            flex-direction: column;
+            .Showtimes-bar{
+                max-width: 40%;
+    
+            }
+            .Showtimes-content{
+                max-width: 100%;
+    
+            }
+        }
+    }
+}

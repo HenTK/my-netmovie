@@ -1,4 +1,5 @@
 @import "../../../../styles/mixin";
+@import "../../../../styles/variable";
 
 .Intro{
     width: 100%;
@@ -36,4 +37,20 @@
         text-decoration: none !important;
         line-height: 50px;
     }
+}
+
+@include responsive(LG){
+    .Intro{
+        height: 500px;
+        span:nth-child(1){
+            font-size: $text-base;
+        }
+        span:nth-child(2){
+            font-size: $text-xs;
+        }
+        .button-outline{
+            @include button-outline-responsive-LG(40, 1, $text-base);
+        }
+    }
+
 }

@@ -9,13 +9,13 @@ export default function Content(props) {
 
   return (
     <div className="Content">
-        <div className="row mb-5" key={props.ele.maCumRap}>
-          <div className="col-3">
-            <img className='img-fluid rounded'
+        <div className="row mb-5 Content-wrapper" key={props.ele.maCumRap}>
+          <div className="col-3 Content-Header">
+            <img className='img-fluid rounded '
             src={props.ele.hinhAnh}
             />
           </div>
-          <div className="col-9 pl-0 mt-0">
+          <div className="col-9 pl-0 mt-0 Content-inner">
             <h5>{props.ele.tenCumRap}</h5>
             <span className='text-muted'>{props.ele.diaChi}</span>
             <div>

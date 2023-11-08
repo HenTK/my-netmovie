@@ -66,9 +66,9 @@ export default function Showtimes() {
    }
 
   return (
-    <div className="col-12 mt-5">
-      <div className="row">
-        <div className="col-3">
+    <div className="col-12 mt-5 Showtimes">
+      <div className="row Showtimes-container">
+        <div className="col-3 Showtimes-bar">
           <div 
           className="nav flex-column nav-pills"
           id='v-pills-tab'
@@ -78,7 +78,7 @@ export default function Showtimes() {
             {renderTabs()}
           </div>
         </div>
-        <div className="col-9">
+        <div className="col-9 Showtimes-content">
           <div className="tab-content" id='v-pills-tabContent'>
               {renderTabContents()}
           </div>

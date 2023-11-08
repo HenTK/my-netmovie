@@ -1,4 +1,5 @@
 @import "../../../../styles/mixin";
+@import "../../../../styles/variable";
 
 .Detail{
     // padding: 15px auto;
@@ -24,7 +25,7 @@
             .trailer{
                 iframe{
                 align-self: center;
-                width: 700px;
+                width: 100%;
                 height: 400px;
                 object-fit: cover;
                 object-position: center;
@@ -40,6 +41,53 @@
                 }
             }
 
+        }
+    }
+}
+
+@include responsive(MD){
+    .Detail{
+
+        .DetailContainer{
+            
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            .DetailContainer-Header{
+                //remove col-4 bootstrap
+                max-width: 100% !important;
+                text-align: center;
+                padding: 10px 0;
+                img{
+                    width: 80%;
+                    height: auto;
+                }
+            }
+            .DetailContainer-content{
+                padding: 10px 0;
+                max-width: 100% !important;
+                .content{
+                    h4{
+                        font-size: $text-lg;
+                    }
+                    p{
+                        font-size: $text-xs;
+                    }
+                }
+                .trailer{
+                    iframe{
+                    width: 100%;
+                    height: 250px;
+                    }
+                    .button-outline{
+
+                    }
+                    .button-outline:hover{
+
+                    }
+                }
+    
+            }
         }
     }
 }

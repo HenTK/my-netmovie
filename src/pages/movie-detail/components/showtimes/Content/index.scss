@@ -1,22 +1,62 @@
 @import "../../../../../styles/mixin";
+@import "../../../../../styles/variable";
 
 .Content{
     padding: 15px;
-    img{
-        box-shadow: 0 5px 10px rgb(0, 0, 0);
+    .Content-wrapper{
+        .Content-Header{
+            img{
+                box-shadow: 0 5px 10px rgb(0, 0, 0);
+            }
+        }
+
+        .Content-Booking{
+            a{
+                text-decoration: none;
+            }
+            a:hover{
+                color: brown;
+            }
+            .button-outline{
+                @include button-outline();
+            }
+            .button-outline:hover{
+                @include button-outline-hover();
+            }
+        }
     }
 }
-.Content-Booking{
-    a{
-        text-decoration: none;
-    }
-    a:hover{
-        color: brown;
-    }
-    .button-outline{
-        @include button-outline();
-    }
-    .button-outline:hover{
-        @include button-outline-hover();
+
+@include responsive(MD){
+    .Content{
+        .Content-wrapper{
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .Content-Header{
+                padding: 10px;
+                max-width: 75%;
+                img{
+                }
+            }
+            .Content-inner{
+                max-width: 100%;
+
+                .Content-Booking{
+                    a{
+                        text-decoration: none;
+                    }
+                    a:hover{
+                        color: brown;
+                    }
+                    .button-outline{
+                        @include button-outline-responsive-LG(40, 0, $text-xs);
+                    }
+                    .button-outline:hover{
+                    }
+                }
+            }
+        }
     }
 }

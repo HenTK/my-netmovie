@@ -1,5 +1,5 @@
 @mixin button-outline(){
-    background-color: rgb(135, 4, 4);
+    background-color: rgb(135, 4, 4) !important;
     box-shadow: 0 4px 8px 0 rgba(57, 1, 1, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     color: white;
     font-family: 'Encode Sans Semi Condensed', sans-serif;
@@ -9,4 +9,38 @@
     scale: 1.01;
     transition: .5s;
     color: white;
+}
+
+@mixin button-outline-none(){
+    display: none;
+    &button{
+        display: none;
+    }
+}
+
+@mixin button-outline-responsive-LG($bh, $blh, $bt){
+    display: block;
+    width: $bh*4px;
+    height: $bh*1px;
+    line-height: $bh*$blh*1px;
+    font-size: $bt;
+}
+
+@mixin responsive($brp){
+    //width < max-width the responsive will change (desktop first)
+    @if $brp == MD {
+        @media screen and (max-width: $MD){
+            @content;
+        }
+    }
+    @else if $brp==LG {
+        @media screen and (max-width: $LG){
+            @content;
+        }
+    }
+    @else if $brp == XL {
+        @media screen and (max-width: $XL){
+            @content;
+        }
+    }
 }

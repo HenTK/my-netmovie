@@ -1,4 +1,5 @@
 @import "../../../../../styles/mixin";
+@import "../../../../../styles/variable";
 
 .Showing{
     background: linear-gradient(black, #313131);
@@ -167,6 +168,88 @@
                     border-radius: 5px;
                     background: linear-gradient(130deg,#ff7a18,#af002d 41.07%,#319197 76.05%);
                     box-shadow: -10px 0 20px 3px #000;
+            }
+        }
+    }
+}
+
+@include responsive(LG){
+    .Showing{
+        .ShowingContainer{
+
+            .ShowingContainer-bg{
+                .ShowingWrapper{
+
+                    .Showing-header{
+
+                        .Popular-header{
+
+                            .Header-card-title{
+                                font-size: $text-md;
+                            }
+                        }
+                        .Popular-header:before {
+
+                        }
+                        .Popular-header:after {
+
+                        }
+                    }
+                    .Showing-card{
+
+                        .Mini-card-item{
+                            min-width: 200px;
+                            min-height: 233px;
+                            .item-content{
+                                padding: 10px 0;
+                                justify-content: center;
+                                    h5{
+                                        font-size: $text-sm;
+                                    }
+                                    div{
+                                        margin: 0 auto;
+                                        .button-outline{
+                                            @include button-outline-responsive-LG(30, 0, $text-xs);
+                                        }
+                                        .button-outline:hover{
+    
+                                        }
+                                    }   
+                            }
+                        }
+                        .Mini-card-item:first-child:hover {
+
+                        }
+                        .Mini-card-item:hover {
+
+                        }
+                        .Mini-card-item:not(:first-child) {
+
+                        }
+                        .Mini-card-item:hover~.Mini-card-item {
+
+                        }
+    
+                    }
+                    ::-webkit-scrollbar {
+
+                      }
+
+                      ::-webkit-scrollbar-track {
+
+                      }
+                       
+                      ::-webkit-scrollbar-thumb {
+
+                      }
+                      
+                      ::-webkit-scrollbar-thumb:hover {
+
+                      }
+                }
+                .ShowingWrapper::after{
+
+                }
             }
         }
     }

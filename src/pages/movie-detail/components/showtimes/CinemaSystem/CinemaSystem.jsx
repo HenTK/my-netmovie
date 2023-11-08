@@ -5,7 +5,7 @@ export default function CinemaSystem(props) {
   return (
     <a 
     key={props.ele.maHeThongRap}
-    className={`nav-link text-capitalize ${props.idx === 0 ? 'active' : ''}`}
+    className={`CinemaSystem nav-link text-capitalize ${props.idx === 0 ? 'active' : ''}`}
     data-toggle = "pill"
     href = {`#${props.ele.maHeThongRap}`}
     role='tab'

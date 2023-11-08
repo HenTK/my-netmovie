@@ -1,3 +1,6 @@
+@import "../../styles/mixin";
+@import "../../styles/variable";
+
 .Footer{
     position: relative;
     background: linear-gradient(#313131, rgb(0, 0, 0));
@@ -93,6 +96,62 @@
                         background: var(--clr2);
                     }
 
+                }
+            }
+        }
+    }
+}
+
+@include responsive(MD){
+    .Footer{
+        height: 300px;
+        padding: 5px 0;
+        .FooterContainer{
+            width: 80%;
+            .FooterWrapper{
+
+                .FooterContent{
+
+                    h1{
+                        font-size: $text-2xl;
+                        padding: 10px 0;
+                    }
+                    ul{
+                        gap: 50px;
+                        li{
+                            a{
+                                width: 40px;
+                                height: 40px;
+
+                                .fa-brands{
+                                    font-size: 20px;
+                                    line-height: 40px;
+                                }
+                            }
+                            a:before{
+      
+                            }
+                            a:after{
+   
+                            }
+                            a:hover{
+
+                            }
+                        }
+                        li:hover .fa-brands {
+
+                        }
+                        li:hover a{
+
+                        }
+                        li:hover a:before{
+
+                        }
+                        li:hover a:after{
+
+                        }
+    
+                    }
                 }
             }
         }

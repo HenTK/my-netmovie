@@ -1,4 +1,5 @@
 @import "../../styles/mixin";
+@import "../../styles/variable";
 
 .header{
     background-color: rgba(219, 191, 191, 0.082);
@@ -47,4 +48,18 @@
 }
 
 .user-img:hover{
+}
+
+@include responsive(LG){
+    .header{
+        .header-inner{
+            .header-wrapper{
+                .header-form{
+                    .button-outline{
+                        @include button-outline-none();
+                    }
+                }
+            }
+        }
+    }
 }

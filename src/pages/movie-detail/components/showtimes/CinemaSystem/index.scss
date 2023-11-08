@@ -1,15 +1,16 @@
+@import "../../../../../styles/mixin";
+@import "../../../../../styles/variable";
 
 .nav-pills .nav-link.active{
-    background-color: rgb(120, 5, 5) !important;
-    box-shadow: 0 4px 8px 0 rgba(190, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    color: white;
-    font-family: 'Encode Sans Semi Condensed', sans-serif;
+    @include button-outline();
 }
 .nav-pills .nav-link.active:hover{
-    background-color: rgb(54, 1, 9);
-    scale: 1.05;
-    transition: .5s;
+    @include button-outline-hover();
 }
 a{
     color: white !important;
+}
+
+@include responsive(MD){
+
 }

@@ -1,3 +1,6 @@
+@import "../../styles/mixin";
+@import "../../styles/variable";
+
 .MovieDetail{
     background: linear-gradient(black, #444343);
     width: 100vw;
@@ -16,6 +19,27 @@
                         }
                     }
     
+                }
+            }
+        }
+    }
+}
+
+@include responsive(LG){
+    .MovieDetail{
+
+        .MovieDetailContainer{
+            .MovieDetailbg{
+                .MovieDetailWrapper{   
+                    .MovieDetailContent{
+                        .MovieDetailBody{
+                            padding: 100px 0;
+                            .MovieDetailBody-container{
+                                width: 80%;
+                            }
+                        }
+        
+                    }
                 }
             }
         }

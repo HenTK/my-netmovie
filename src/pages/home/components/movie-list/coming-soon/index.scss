@@ -1,4 +1,5 @@
 @import "../../../../../styles/mixin";
+@import "../../../../../styles/variable";
 
 .ComingSoon{
     width: 100%;
@@ -41,8 +42,9 @@
                             justify-content: flex-end;
                             border-radius: 10px;
                             .item-content-inner{
+                                padding: 20px;
                                 width: 100%;
-                                height: 30%;
+                                height: auto;
                                 display: flex;
                                 flex-direction: column;
                                 justify-content: center;
@@ -113,6 +115,113 @@
                         transition: all .5s;
                     }
 
+                }
+            }
+        }
+    }
+}
+
+@include responsive(LG){
+    .ComingSoon{
+
+        .ComingSoonContainer{
+            .ComingSoonContainer-bg{
+
+                .ComingSoonWrapper{
+                    .ComingSoon-header{
+                        h2{
+                            font-size: $text-xl;
+
+                        }
+                    }
+                    .ComingSoon-card{
+                        width: 75%;
+                        .Mini-card-item{
+                            height: 300px;
+                            .item-content{
+
+                                .item-content-inner{
+
+                                    h5{
+                                        font-size: $text-base;
+                                        
+                                    }
+                                    .button-outline{
+                                        @include button-outline-responsive-LG(30, 0, $text-base)
+
+                                    }
+                                    .button-outline:hover{
+
+                                    }
+    
+                                }                        
+                            }
+                            .item-content::before {
+                                
+                            }
+                         
+                            .item-content::after {
+                                
+                            }
+                        }
+                        .Mini-card-item:hover{
+                            
+                        }
+    
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include responsive(MD){
+    .ComingSoon{
+
+        .ComingSoonContainer{
+            .ComingSoonContainer-bg{
+
+                .ComingSoonWrapper{
+                    .ComingSoon-header{
+                        h2{
+
+                        }
+                    }
+                    .ComingSoon-card{
+                        width: 50%;
+                        .Mini-card-item{
+                            height: 300px;
+                            width: 100%;
+                            .item-content{
+
+                                .item-content-inner{
+                                    padding: 10px;
+                                    height: auto;
+                                    h5{
+                                        font-size: $text-xs;
+                                    }
+                                    .button-outline{
+
+                                    }
+                                    .button-outline:hover{
+
+                                    }
+    
+                                }                        
+                            }
+                            .item-content::before {
+                                
+                            }
+                         
+                            .item-content::after {
+                                
+                            }
+                        }
+                        .Mini-card-item:hover{
+                            
+                        }
+    
+                    }
                 }
             }
         }
